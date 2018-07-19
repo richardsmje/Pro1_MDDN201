@@ -1,154 +1,80 @@
-<!DOCTYPE HTML>
+*{
+	box-sizing: border-box; 
+	/* This makes the widths of elements more consistent
+		Full details here https://css-tricks.com/box-sizing/ */
+}
 
-<html>
+body{
+	margin: 0px; /* Often browsers have a 5px margin by deafult*/
+	font-family: sans-serif;
+}
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Your Website</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
+section{
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 
-<body>
+header{
+	background-color: darkOrange;
+	color: white; /* more readable on an orange background */
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
 
-<p>Notice how this content isn't centered. To center it we need to wrap it</p>
+nav{
+	width: 100%;
+	height: 60px;
+	background-color: wheat;
+}
 
-	<section>
-		<h1>Here is some centered content, by wrapping it with a section tag</h1>
-		<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque est, egestas tristique quam nec, efficitur efficitur massa. Aenean in faucibus felis. Mauris ut ligula vestibulum, varius metus vitae, maximus orci. </em></p>
+nav a, nav h3{
+	float: left;
+	margin: 0px;
+	line-height: 60px;
+	margin-left: 1em;
+	margin-right: 1em;
+	text-decoration: none;
+}
 
-		<p>Notice how if you change the width of your browser it stays in the center</p>
-	</section>
-
-	<section>
-		<p>This is a simple nav bar, which is full width of the page</p>
-	</section>
-	<nav>
-		<h3>A nice navigation bar</h3>
-		<a href="#one">Link 1</a>
-		<a href="#two">Link 2</a>
-		<a href="#three">Link 3</a>
-	</nav>
-
-	<section id="one">
-		<p><strong>Content number one</strong></p>
-		<p>By setting an a tag's href to "#one", it will link to a html element with the id of "one". <a href="https://css-tricks.com/hash-tag-links-padding/">More info about that here</a></p>
-	</section>
-
-	<section id="two">
-		<p><strong>Content number 2</strong></p>
-	</section>
-
-	<section id="three">
-		<p><strong>Content number 3</strong></p>
-	</section>
-
-	<header>
-		<section>
-			<h1>This header has a solid background and some padding</h1>
-			<p>There is also a section tag inside it to center this content</p>
-		</section>
-	</header>
-
-	
-
-	<section>
-		<h3>Grids</h3>
-
-		<p>Use grids to divide up or layout content. For example, putting an image on the left, and lots to text on the right</p>
-
-		<p>I've added a 'show' class so you can see where the grids are. Use chrome's web inspector tools to take a closer look</p>
+nav a:hover{
+	text-decoration: underline; /* Hover styles to let people know they can click it */
+}
 
 
-		<div class="g-row show"> <!--first wrap all grid cells in a g-row-->
-			<div class="g-50 show">
-				50% width .g-50
-			</div>
-			<div class="g-50 show">
-				50% width .g-50
-			</div>
 
-			<div class="g-30 show">
-				30% width .g-30
-			</div>
+/* Simple grid */
+.g-row{
+	width: 100%;
+	overflow: hidden;
+}
 
-			<div class="g-70 show">
-				70% width .g-70
-			</div>
-		</div>
+.g-row img{
+	width: 100%; /*This makes all images in grids to be the size of their cell */
+}
 
-		<p>The other cool things about grids, is that 50% width means 50% of the div's <em>parent</em>. This means you can put cells in cells to get infinitly smaller sizes. The possiblities are endless!</p>
+.g-50{
+	width: 50%;
+	float: left;
+}
 
-		<div class="g-row show"> <!--first wrap all grid cells in a g-row-->
-			<div class="g-50 show">
-				<div class="g-50 show">
-					<div class="g-50 show">
-						50%
-					</div>
-					<div class="g-50 show">
-						50%
-					</div>
-				</div>
-				<div class="g-50 show">
-					50%
-				</div>
-			</div>
-			<div class="g-50 show">
-				50%
-			</div>
-		</div>
+.g-30{
+	width: 30%;
+	float: left;
+}
 
-		<p>Here's a simple page using all of these elements</p>
-	</section>
+.g-70{
+	width: 70%;
+	float: left;
+}
 
-	<header>
-		<section>
-			<h1>Infrastructure of Wellington</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</section>
-	</header>
+.show{
+	border: 1px solid blue;
+	padding: 2px;
+}
 
-	<section>
-		<div class="g-row">
-			<div class="g-30">
-				<img src="img/cover.jpg">
-			</div>
-			<div class="g-70 padded">
-				<h3>Example</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque est, egestas tristique quam nec, efficitur efficitur massa. Aenean in faucibus felis. Mauris ut ligula vestibulum, varius metus vitae, maximus orci.</p>
-			</div>
-		</div>
-
-		<div class="g-row">
-			<div class="g-30">
-				<img src="img/cover.jpg">
-			</div>
-			<div class="g-70 padded">
-				<h3>Example</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque est, egestas tristique quam nec, efficitur efficitur massa. Aenean in faucibus felis. Mauris ut ligula vestibulum, varius metus vitae, maximus orci.</p>
-			</div>
-		</div>
-
-		<div class="g-row">
-			<div class="g-30">
-				<img src="img/cover.jpg">
-			</div>
-			<div class="g-70 padded">
-				<h3>Example</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque est, egestas tristique quam nec, efficitur efficitur massa. Aenean in faucibus felis. Mauris ut ligula vestibulum, varius metus vitae, maximus orci.</p>
-			</div>
-		</div>
-
-		<div class="g-row">
-			<div class="g-30">
-				<img src="img/cover.jpg">
-			</div>
-			<div class="g-70 padded">
-				<h3>Example</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque est, egestas tristique quam nec, efficitur efficitur massa. Aenean in faucibus felis. Mauris ut ligula vestibulum, varius metus vitae, maximus orci.</p>
-			</div>
-		</div>
-	</section>
-
-</body>
-
-</html>
+.padded{
+	padding: 20px; /* I add this to cells to add a little padding*/
+}
